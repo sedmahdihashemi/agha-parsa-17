@@ -1,0 +1,111 @@
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+main {
+    width: 100%;
+
+    .buildbox {
+        width: 100%;
+
+        >div {
+            position: relative;
+
+        }
+
+        span {
+            display: flex;
+            width: 1px;
+            height: 390px;
+            border-radius: 30%;
+            background-color: rgba(230, 230, 102, 0.342);
+            position: absolute;
+            top: 60px;
+            padding: 0;
+            overflow: hidden;
+
+            @media screen and (max-width:992px) {
+                display: none;
+            }
+
+            &::before {
+                content: '';
+                display: flex;
+                width: 100%;
+                height: 200px;
+                background-color: aquamarine;
+                position: absolute;
+                top: -200px;
+                animation: lightanime 2s linear infinite;
+            }
+
+            &:first-of-type {
+                right: 200px;
+
+                &::before {
+                    animation-delay: 1s;
+                    animation-duration: 2s;
+                }
+            }
+
+            &:last-of-type {
+                right: 360px;
+
+            }
+        }
+
+        .motto {
+            font-size: 60px;
+
+            @media screen and (max-width:992px) {
+                font-size: 42px;
+
+            }
+        }
+    }
+
+    .custom {
+        width: 100%;
+        overflow: hidden;
+
+        .marq {
+            width: 4000px;
+            display: flex;
+            animation: marq linear infinite 50s;
+
+            >img {
+                width: 80px;
+                height: 80px;
+                margin: 0 40px;
+            }
+        }
+    }
+
+    .box {
+        >div {
+            border: 2px solid blue;
+            border-radius: 5px;
+        }
+    }
+
+
+}
+
+
+
+@keyframes lightanime {
+    to {
+        top: 800px;
+    }
+}
+
+@keyframes marq {
+    to {
+        transform: translateX(-3000px);
+    }
+}
